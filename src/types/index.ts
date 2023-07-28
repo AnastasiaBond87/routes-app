@@ -1,3 +1,5 @@
+import { LatLngLiteral } from 'leaflet';
+
 interface IWaypoint {
   distance: number;
   hint: string;
@@ -10,4 +12,11 @@ interface IRouteResponse {
   geometry: string;
 }
 
-export type { IWaypoint, IRouteResponse };
+interface IColumnData {
+  key: string;
+  name: string;
+  dep: LatLngLiteral;
+  int: LatLngLiteral;
+  dest: LatLngLiteral;
+}
+export type { IWaypoint, IRouteResponse, IColumnData };

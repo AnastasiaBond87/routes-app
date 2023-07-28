@@ -1,7 +1,7 @@
 import { Layout } from 'antd';
-import RouteList from './components/RouteList';
+import RoutesTable from '../components/RoutesTable';
 import { styled } from 'styled-components';
-import Map from './components/Map';
+import Map from '../components/Map';
 
 const { Sider } = Layout;
 
@@ -14,13 +14,14 @@ const SideBar = styled(Sider)`
   display: flex;
   flex-direction: column;
   flex: 0;
+  background-color: white !important;
 `;
 
 function App() {
   return (
     <AppLayout hasSider>
-      <SideBar width={240} theme="dark">
-        <RouteList />
+      <SideBar width={600}>
+        <RoutesTable />
       </SideBar>
       <Map />
     </AppLayout>
