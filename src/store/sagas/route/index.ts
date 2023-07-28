@@ -9,10 +9,10 @@ function* getRouteSaga(action: PayloadAction<string>) {
   try {
     const data: IRouteResponse = yield call(getRoute, action.payload);
 
-    const { waypoints, geometry } = data;
+    const { waypoints, geometry, distance } = data;
     const coordinates = getLatLang(geometry);
 
-    yield put(getRouteSuccess({ waypoints, coordinates }));
+    yield put(getRouteSuccess({ waypoints, coordinates, distance }));
   } catch (error) {
     const { message } = error as Error;
 

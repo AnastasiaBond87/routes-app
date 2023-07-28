@@ -2,7 +2,7 @@ import { Polyline, Popup } from 'react-leaflet';
 import { useAppSelector } from '../../../store/hooks';
 
 export default function PolyLine() {
-  const { coordinates } = useAppSelector((store) => store.route);
+  const { coordinates, distance } = useAppSelector((store) => store.route);
 
   if (!coordinates) {
     return null;
@@ -10,7 +10,7 @@ export default function PolyLine() {
 
   return (
     <Polyline color={'red'} opacity={0.7} weight={2} positions={coordinates}>
-      <Popup>Polygon</Popup>
+      <Popup>{`distance: ${distance}m`}</Popup>
     </Polyline>
   );
 }

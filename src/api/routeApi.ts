@@ -12,8 +12,9 @@ const getRoute = async (coordinates: string): Promise<IRouteResponse> => {
     }
     const waypoints: IWaypoint[] = data.waypoints;
     const geometry: string = data.routes[0].geometry;
+    const distance: number = data.routes[0].distance;
 
-    return { waypoints, geometry };
+    return { waypoints, geometry, distance };
   } catch (error) {
     const { message } = error as Error;
     throw new Error(message);

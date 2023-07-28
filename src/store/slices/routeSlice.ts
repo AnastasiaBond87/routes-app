@@ -5,6 +5,7 @@ import { LatLngExpression } from 'leaflet';
 interface IRouteState {
   waypoints: IWaypoint[] | null;
   coordinates: LatLngExpression[] | null;
+  distance: number | null;
   isLoading: boolean;
   error: string;
 }
@@ -12,6 +13,7 @@ interface IRouteState {
 const initialState: IRouteState = {
   waypoints: null,
   coordinates: null,
+  distance: null,
   isLoading: false,
   error: '',
 };
@@ -26,12 +28,13 @@ const routeSlice = createSlice({
     },
     getRouteSuccess: (
       state,
-      action: PayloadAction<Pick<IRouteState, 'coordinates' | 'waypoints'>>
+      action: PayloadAction<Pick<IRouteState, 'coordinates' | 'waypoints' | 'distance'>>
     ) => {
       state.isLoading = false;
       state.error = '';
       state.waypoints = action.payload.waypoints;
       state.coordinates = action.payload.coordinates;
+      state.distance = action.payload.distance;
     },
     getRouteError: (state, action: PayloadAction<string>) => {
       state.isLoading = false;

@@ -10,6 +10,7 @@ interface IWaypoint {
 interface IRouteResponse {
   waypoints: IWaypoint[];
   geometry: string;
+  distance: number;
 }
 
 interface IColumnData {
