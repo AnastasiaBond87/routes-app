@@ -1,6 +1,6 @@
 import { ColumnsType } from 'antd/es/table';
 import { IColumnData } from '../types';
-import TableCell from '../components/RouteList/TableCell';
+import TableCell from '../components/RoutesTable/TableCell';
 import { AnyObject } from 'antd/es/_util/type';
 
 const columns: ColumnsType<AnyObject> = [
