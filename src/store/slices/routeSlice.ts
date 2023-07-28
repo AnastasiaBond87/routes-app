@@ -22,7 +22,8 @@ const routeSlice = createSlice({
   name: 'route',
   initialState,
   reducers: {
-    getRouteFetch: (state, action: PayloadAction<string>) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    getRouteFetch: (state, _action: PayloadAction<string>) => {
       state.error = '';
       state.isLoading = true;
     },

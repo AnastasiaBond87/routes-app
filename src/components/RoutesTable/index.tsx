@@ -24,6 +24,10 @@ export default function RoutesTable() {
   const dispatch = useAppDispatch();
   const { selectedItem } = useAppSelector((store) => store.nav);
 
+  const handleRowClick = (key: string): void => {
+    dispatch(setSelectedItem(Number(key)));
+  };
+
   useEffect(() => {
     if (selectedItem) {
       const currentRoute = routes.find(({ id }) => id === selectedItem);
@@ -45,7 +49,7 @@ export default function RoutesTable() {
       rowClassName={(record) => (Number(record.key) === selectedItem ? 'active' : '')}
       onRow={(record) => {
         return {
-          onClick: () => dispatch(setSelectedItem(Number(record.key))),
+          onClick: () => handleRowClick(record.key),
         };
       }}
     />
