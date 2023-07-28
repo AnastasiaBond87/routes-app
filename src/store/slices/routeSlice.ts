@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IWaypoint } from '../../types';
-import { LatLng } from 'leaflet';
+import { LatLngExpression } from 'leaflet';
 
 interface IRouteState {
   waypoints: IWaypoint[] | null;
-  coordinates: LatLng[] | null;
+  coordinates: LatLngExpression[] | null;
   isLoading: boolean;
   error: string;
 }

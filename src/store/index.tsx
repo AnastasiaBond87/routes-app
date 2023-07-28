@@ -15,7 +15,7 @@ const store = configureStore({
       thunk: false,
       serializableCheck: {
         ignoredPaths: ['route.coordinates'],
-        ignoredActions: ['route/setCoordinates'],
+        ignoredActions: ['route/getRouteSuccess'],
       },
     }).concat(sagaMiddleware),
 });
